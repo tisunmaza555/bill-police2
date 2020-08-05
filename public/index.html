@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Electronic bill</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/ba2f837b37.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="public/css/form-validation.css" rel="stylesheet">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+        
+        .button {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        
+        .button1 {
+            width: 250px;
+        }
+        
+        .button2 {
+            width: 50%;
+        }
+        
+        .button3 {
+            padding-left: 0;
+            padding-right: 0;
+            width: 100%;
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+    <div class="container">
+        <form class="needs-validation ">
+            <div class="py-5 text-center">
+                <i class="fas fa-file-invoice-dollar fa-10x"></i>
+                <div class="py-5 text-center">
+                    <h2>ใบสั่งเจ้าพนักงานจราจรหรือพนักเจ้าหน้าที่</h2>
+                    <h4>Traffic Ticket issued by Traffic Officers or Cometent Officials</h4>
+
+                </div>
+
+
+                <div class="container bord">
+                    <div class="row">
+                        <div class="col-md-12 mb-3 ">
+                            <label for="name">ชื่อผู้ขับขี่,เจ้าของหรือผู้ครอบครอง <br>(Driver's name,conveyance owner or possssors name)</label>
+                            <input type="text" id="name" class="form-control" placeholder="ชื่อ-นามสกุล (Name & Lastname)" required></div>
+
+                    </div>
+                    <h6>ที่อยู่ : <br>(Address)</h6>
+                    <div class="row">
+                        <div class="col-md-4 mb-5">
+                            <div class="mb-3">
+                                <label for="Other">ตำบล/แขวง<span class="text-muted"> <br>  Sub-district</span></label>
+                                <input type="text" class="form-control" id="Other" placeholder=" กรุณากรอกข้อมูล">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-5">
+                            <div class="mb-3">
+                                <label for="Other">อำเภอ/เขต  <span class="text-muted"> <br> Distric</span></label>
+                                <input type="text" class="form-control" id="Other" placeholder="กรุณากรอกข้อมูล">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-5">
+                            <div class="mb-3">
+                                <label for="Other">จังหวัด<span class="text-muted"> <br> Province</span></label>
+                                <input type="text" class="form-control" id="Other" placeholder="กรุณากรอกข้อมูล">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="road">ถนน</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="road" placeholder="ถนน">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="soi">ตรอก/ซอย</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="soi" placeholder="ตรอก/ซอย">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="post">รหัสไปรษณีย์</label>
+                            <div class="input-group">
+                                <input type="text" tabindex="1" onKeyPress="CheckNum()" placeholder="00000" name="reg_id_card" id="post" size="25" value="" class="inputbox autowidth form-control" onKeyup="Post(this)" minlength="13" maxlength="20" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class=" mb-4">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="kohra"><b>ข้อหา(Charge:)</b></label>
+                            <input type="text" id="kohra" class="form-control" placeholder="กรุณาใส่ข้อความ" required>
+                            <br></div>
+                        <div class="col-md-6 ">
+                            ความเร็วตามที่กฎหมายกำหนด speed liit enforcement <br><input type="text" id="zip" class="c" onKeyPress="CheckNum()" placeholder=" km/hr " required> กม./ชม (km/hr). </div>
+                        <div class="col-md-6 py-1">
+                            ความเร็วที่ตรวจจับ Vehicle speed <br><input type="text" id="zip" class="c" onKeyPress="CheckNum()" placeholder=" km/hr " required> กม./ชม (km/hr). </div>
+                        <div class="col-md-6 py-1">
+                            ช่องทางเดินรถที่ (Vehicle lane) <br><input type="text" id="zip" class="c" onKeyPress="CheckNum()" placeholder=" " required> </div>
+                        <div class="col-md-6 py-1">
+                            หมายเลขทะเบียนรถ (Vehicle registration no) <br><input type="text" id="zip" class="c" onKeyPress="CheckNum()" placeholder=" " required></div>
+                    </div>
+                    <hr class=" mb-4">
+                    <div>
+                        &emsp;&emsp;อาศัยอำนาจตามความในมาตรา ๑๔๑ วรรค หนึ่ง แห่ง พ.ร.บ.จราจรทางบก พ.ศ.๒๕๒๒ ซึ่งแก้ไขเพิ่มเติมโดย พ.ร.บ.จราจรทางบก(ฉบับที่ ๙) พ.ศ.2557 และมาตรา ๑๔๑แห่ง พ.ร.บ.จราจรทางบก พ.ศ.๒๕๕๑ ซึ่งแก้ไข เพิ่มเติมโดย พ.ร.บ.จราจรทางบก(ฉบับที่ ๑๑) พ.ศ.๒๕๕๙ ให้ผู้ขับขี่หรือเจ้าของรถหรือผู้ครอบครองรถ
+                        ไปชำระค่าปรับตาม <b>ข้อกำหนดสำนักงานตำรวจแห่งชาติ</b> ต่อพนักงานสอบสวน หรือชำระด้วยวิธีอื่นใดตามที่ระบุไว้ด้านหลังใบสั่งนี้ By virtue of Section 140 paragraph 1 of the Road Traffic Act B.E 2522(1979),as
+                        amended by the Road Traffic Act (No.9),B.E.2557(2014) and Section141 of theRoad Traffic Act B.E.2522(1979),as amended by theRoadTrafficAct(์No.11),BE.2559(2016)The drive.
+
+                        <br><b><u>โปรดอ่านคำเตือนวิธีการชำระค่าปรับด้านหลัง</u></b><br> (Please read the warning and how to pay fine at the back)
+                    </div>
+
+                    <hr class=" mb-4">
+                    <div>
+                        <h6>ผู้ออกใบสั่ง</h6>
+                        Traffic Ticket Issuing Officer
+                        <h5>เลขที่ใบสั่ง :6104101349</h5>
+                        <div class="row">
+                            <div class="col-md-6 mb-3 ">
+                                <label for="name">ชื่อ/Name</label>
+                                <input type="text" id="name" class="form-control" placeholder="ชื่อ-นามสกุล/Name & Lastname" required></div>
+                            <div class="col-md-6 mb-3 ">
+                                <label for="code">รหัส/Code</label>
+                                <input type="text" id="code" class="form-control" placeholder="รหัส/Code" onKeyPress="CheckNum()" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class=" mb-4">
+                    <div class="row">
+                        <div class="col-md-12 mb-3 ">
+                            <label for="bai">หน่วยงานผู้ออกใบสั่ง <br> Traffic Ticket Issuing Unit</label>
+                            <input type="text" id="bai" class="form-control" placeholder="ชื่อ/Name" required></div>
+                    </div>
+                    <h6>ที่อยู่/Address: </h6>
+                    <div class="row">
+                        <div class="col-md-4 mb-5">
+                            <div class="mb-3">
+                                <label for="Other">ตำบล/แขวง<span class="text-muted"> <br>  Sub-district</span></label>
+                                <input type="text" class="form-control" id="Other" placeholder=" กรุณากรอกข้อมูล">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-5">
+                            <div class="mb-3">
+                                <label for="Other">อำเภอ/เขต  <span class="text-muted"> <br> Distric</span></label>
+                                <input type="text" class="form-control" id="Other" placeholder="กรุณากรอกข้อมูล">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-5">
+                            <div class="mb-3">
+                                <label for="Other">จังหวัด<span class="text-muted"> <br> Province</span></label>
+                                <input type="text" class="form-control" id="Other" placeholder="กรุณากรอกข้อมูล">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="road">ถนน</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="road" placeholder="ถนน">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="soi">ตรอก/ซอย</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="soi" placeholder="ตรอก/ซอย">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="post">รหัสไปรษณีย์</label>
+                            <div class="input-group">
+                                <input type="text" tabindex="1" onKeyPress="CheckNum()" placeholder="00000" name="reg_id_card" id="post" size="25" value="" class="inputbox autowidth form-control" onkeyup="Post(this)" minlength="13" maxlength="20" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="tel">โทร</label>
+                        <div class="input-group">
+                            <input type="text" tabindex="1" onKeyPress="CheckNum()" placeholder="00-0000-0000" name="reg_id_card" id="tel" size="25" value="" class="inputbox autowidth form-control" onkeyup="Tel(this)" minlength="13" maxlength="20" />
+                        </div>
+                    </div>
+                    <!--555-->
+                    <hr class=" mb-4">
+                    <div class="row">
+                        <div class="col-md-12 mb-3 ">
+                            <label for="name">ชื่อผู้รับ</label>
+                            <input type="text" id="name" class="form-control" placeholder="ชื่อ-นามสกุล" required>
+                        </div>
+                    </div>
+                    <h6>ที่อยู่ผู้รับ :</h6>
+                    <div class="row">
+                        <div class="col-md-4 mb-5">
+                            <div class="mb-3">
+                                <label for="Other">ตำบล/แขวง<span class="text-muted"> <br>  Sub-district</span></label>
+                                <input type="text" class="form-control" id="Other" placeholder=" กรุณากรอกข้อมูล">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-5">
+                            <div class="mb-3">
+                                <label for="Other">อำเภอ/เขต  <span class="text-muted"> <br> Distric</span></label>
+                                <input type="text" class="form-control" id="Other" placeholder="กรุณากรอกข้อมูล">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-5">
+                            <div class="mb-3">
+                                <label for="Other">จังหวัด<span class="text-muted"> <br> Province</span></label>
+                                <input type="text" class="form-control" id="Other" placeholder="กรุณากรอกข้อมูล">
+                            </div>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-5">
+                            <label for="road">ถนน</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="road" placeholder="ถนน">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-5">
+                            <label for="soi">ตรอก/ซอย</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="soi" placeholder="ตรอก/ซอย">
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-5">
+                            <label for="post">รหัสไปรษณีย์</label>
+                            <div class="input-group">
+                                <input type="text" tabindex="1" onKeyPress="CheckNum()" placeholder="00000" name="reg_id_card" id="post" size="25" value="" class="inputbox autowidth form-control" onKeypress="Post(this)" minlength="13" maxlength="20" required />
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <hr class=" mb-4">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="num">เลขที่ใบสั่ง/Traffic ticket no</label>
+                            <input type="text" id="num" class="form-control" placeholder="เลขที่ใบสั่ง" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="date1">วันเวลาที่กระทำผิด/Date of committing offences</label>
+                            <input type="datetime-local" id="date1" class="form-control" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="total">จำนวนค่าปรับ/Amount of fine</label>
+                            <input type="text" id="total" class="form-control" onKeypress="CheckNum()" placeholder="ราคา" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="duedate">วันครบกำหนดชำระ/Due date</label>
+                            <input type="date" id="duedate" class="form-control" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="p">คะแนนที่ถูกบันทึกเดิม/Former demerit points</label>
+                            <input type="text" id="p" class="form-control" placeholder="คะแนน" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="pd">คะแนนที่ถูกบันทึกครั้งนี้/Current demerit points</label>
+                            <input type="text" id="pd" class="form-control" placeholder="คะแนน" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="pt">คะแนนที่ถูกบันทึกรวม/Total demerit points</label>
+                            <input type="text" id="pt" class="form-control" placeholder="คะแนน" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="sa">สถานะใบอนุญาตขับขี่/Status of driver’s license </label>
+                            <input type="text" id="sa" class="form-control" placeholder="สถานะใบขับขี่" required>
+                        </div>
+                    </div>
+
+                    <hr class="mb-4">
+
+                    <div class="form-group">
+                        <label for="file">
+          <h5>พยานหลักฐาน</h5>
+            Evidence <br>
+            รูปรถ(Photo of Vehicle)
+
+        </label>
+                        <div class="input-group mb-3">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile02" required>
+                                <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose
+              file</label>
+                            </div>
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                </div>
+                <div class="py-4">
+                    <button class="btn btn-primary btn-lg btn-block " type="submit">Continuet</button></div>
+        </form>
+        </div>
+
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">&copy; 2020 By Sun Patipon</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Support</a></li>
+            </ul>
+        </footer>
+
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js " integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI " crossorigin="anonymous "></script>
+
+        <!--จังหวัด-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script type="text/javascript" src="AutoProvince.js"></script>
+        <script type="text/javascript" src="autoTab.js"></script>
+
+        <script>
+            $('body').AutoProvince({
+                PROVINCE: '#province', //  select สำหรับรายชื่อจังหวัด
+                AMPHUR: '#amphur', //  select สำหรับรายชื่ออำเภอ
+                DISTRICT: '#district', //  select สำหรับรายชื่อตำบล
+                POSTCODE: '#postcode', //  input field สำหรับรายชื่อรหัสไปรษณีย์
+                GEOGRAPHY: '#geography', // input field แสดงภาค
+                arrangeByName: false // กำหนดให้เรียงตามตัวอักษร ลำดับจังหวัด
+            });
+        </script>
+</body>
+
+</html>
